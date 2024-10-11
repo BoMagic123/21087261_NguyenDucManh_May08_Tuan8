@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <script src="../JS/jquery-3.3.1.min.js"></script>
+    <script src="../JS/script.js"></script>
+</head>
+<body>
+    <div id="container" class="">
+        <h3>Register Form</h3>
+        <form action="">
+            <table>
+                <tr>
+                    <td>Họ và tên (*):</td>
+                    <td>
+                        <input type="text" required name="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tên Đăng nhập (*):</td>
+                    <td>
+                        <input type="text" required name="username">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mật khẩu (*):</td>
+                    <td>
+                        <input type="text" required name="password">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Xác nhận mật khẩu (*):</td>
+                    <td>
+                        <input type="text" required name="passsword-confirm">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ngày sinh:</td>
+                    <td>
+                        <input type="number" min="1" max="31" value="15" name="day"> Tháng
+                        <input type="number" min="1" max="12" value="11" name="month"> Năm
+                        <input type="number" min="1970" max="3000" value="2023" name="year">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Điện thoại:</td>
+                    <td>
+                        <input type="text" name="phone">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Địa chỉ:</td>
+                    <td>
+                        <input type="text" name="address">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email khác:</td>
+                    <td>
+                        <input type="text" name="email">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sở thích:</td>
+                    <td>
+                        <select name="sothich" id="favorite">
+                            <option value="Ca Nhạc">Ca Nhạc</option>
+                            <option value="Nhảy múa">Nhảy múa</option>
+                            <option value="Đọc sách">Đọc sách</option>
+                            <option value="Thể thao">Thể thao</option>
+                            <option value="Du lịch">Du lịch</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="button" id="register">Đăng ký</button>
+                        <button type="button">Hủy</button>
+                    </td>
+                </tr>
+                
+            </table>
+        </form>
+    </div>
+</body>
+</html>

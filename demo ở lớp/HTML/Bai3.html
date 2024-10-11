@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+
+    <!-- jQuery -->
+    <script src="../js/jquery-3.6.4.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <style>
+        .menu li a:hover {
+            background-color: #ddd;
+        }
+
+        .navbar {
+            background-color: #f2f2f2;
+            padding: 10px;
+        }
+
+        .menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            display: inline-block;
+        }
+
+        .menu li a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .container {
+            height: 650px;
+            width: 80%;
+        }
+
+        .err {
+            color: red;
+        }
+
+        .modal-dialog {
+            max-width: 800px;
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        .modal-body .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .modal-body .form-group label {
+            font-weight: bold;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        .float-left,
+        .float-right {
+            display: flex;
+            align-items: center;
+        }
+
+        #btnXoa,
+        #btnDangKy {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row headerBV">
+            <div class="col-12">
+                <img src="../IMG/tải xuống1.jpg" width="101%" height="290px" align="right">
+            </div>
+        </div>
+        <div class="row menuBV bg-info">
+            <div class="col-12">
+                <nav class="navbar">
+                    <ul class="menu">
+                        <li class="nav-item"><a href="" class="link">Trang chủ</a></li>
+                        <li class="nav-item">
+                            <button class="btn btn-success" data-toggle="modal" data-target="#modalID">Đăng ký</button>
+                        </li>
+                        <li class="nav-item"><a href="" class="link">Trợ giúp</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modalID">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>THÔNG TIN HÓA ĐƠN THANH TOÁN</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form action="" class="form">
+                            <div class="form-group">
+                                <label for="txtMaThe">Mã học viên</label>
+                                <input id="txtMaThe" type="text" class="form-control">
+                                <span id="errMaThe" class="err">(*)</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="txtHoTen">Họ tên</label>
+                                <input id="txtHoTen" type="text" class="form-control">
+                                <span id="errHoTen" class="err">(*)</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="txtGmail">Gmail</label>
+                                <input id="txtGmail" type="text" class="form-control">
+                                <span id="errGmail" class="err">(*)</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="selectDichVu">Dịch vụ</label>
+                                <select id="selectDichVu" class="form-control">
+                                    <option value="0" selected>Chọn dịch vụ</option>
+                                    <option value="50000">Bơi (50k)</option>
+                                    <option value="30000">Ăn (30k)</option>
+                                    <option value="100000">Xông hơi (100k)</option>
+                                </select>
+                                <span id="errDichVu" class="err"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="txtTienDichVu">Tiền dịch vụ</label>
+                                <input id="txtTienDichVu" type="number" class="form-control" value="0" readonly>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="txtDoDung">Chọn đồ dùng:</label>
+                                <div>
+                                    <input type="checkbox" class="doDung" data-price="10"> Áo quần bơi (10k)<br>
+                                    <input type="checkbox" class="doDung" data-price="5"> Kính bơi (5k)<br>
+                                    <input type="checkbox" class="doDung" data-price="3"> Pháo (3k)<br>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="txtTienDoDung">Tiền đồ dùng</label>
+                                <input id="txtTienDoDung" type="number" class="form-control" value="0" readonly>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <div class="float-left">
+                            <input id="btnXoa" type="button" value="Xóa" class="btn btn-danger">
+                        </div>
+                        <div class="float-right">
+                            <input id="btnDangKy" type="button" value="Đăng ký" class="btn btn-info">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-bordered" id="tableDS">
+            <div class="col-12">
+                <h1 class="text-center">DANH SÁCH THÔNG TIN THANH TOÁN</h1>
+            </div>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Mã thẻ Bảo hiểm</th>
+                    <th>Họ tên</th>
+                    <th>Gmail</th>
+                    <th>Tiền dịch vụ</th>
+                    <th>Tiền đồ dùng</th>
+                    <th>Tổng tiền</th> 
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        let i = 1;
+
+        function ktMaThe() {
+            const maThePattern = /^\d{2}-\d{8}$/;
+            return maThePattern.test($("#txtMaThe").val().trim());
+        }
+
+        function kiemtrahoten() {
+            const hoTen = $("#txtHoTen").val().trim();
+            const words = hoTen.split(" ");
+            return words.length >= 2 && words.every(word => /^\p{Lu}\p{L}*$/u.test(word));
+        }
+
+        function kiemtraGmail() {
+            let gmail = $("#txtGmail").val();
+            return gmail.endsWith('@iuh.edu.vn') && gmail.length > 14;
+        }
+
+        $(document).ready(function () {
+            $(".doDung").change(function () {
+                let totalDoDung = 0;
+                $(".doDung:checked").each(function () {
+                    totalDoDung += parseFloat($(this).data("price")) * 1000;
+                });
+                $("#txtTienDoDung").val(totalDoDung);
+            });
+
+            $("#selectDichVu").change(function () {
+                const servicePrice = parseFloat($(this).val());
+                $("#txtTienDichVu").val(servicePrice);
+            });
+
+            $("#txtMaThe").on('input', function () {
+                if (!ktMaThe()) {
+                    $("#errMaThe").text("Vui lòng nhập mã thẻ bảo hiểm đúng định dạng: xx-yyyyyyyy");
+                } else {
+                    $("#errMaThe").text("");
+                }
+            });
+
+            $("#txtHoTen").on('input', function () {
+                if (!kiemtrahoten()) {
+                    $("#errHoTen").text("Vui lòng nhập họ tên đúng định dạng: Ít nhất 2 từ, hoa đầu từ");
+                } else {
+                    $("#errHoTen").text("");
+                }
+            });
+
+            $("#txtGmail").on('input', function () {
+                if (!kiemtraGmail()) {
+                    $("#errGmail").text("Vui lòng nhập Gmail hợp lệ với đuôi '@iuh.edu.vn'");
+                } else {
+                    $("#errGmail").text("");
+                }
+            });
+
+            $("#btnDangKy").click(function () {
+                if (!ktMaThe() || !kiemtrahoten() || !kiemtraGmail() || $("#selectDichVu").val() == "0") {
+                    $("#errDichVu").text("Bạn cần chọn dịch vụ.");
+                    return;
+                }
+
+                const maThe = $("#txtMaThe").val().trim();
+                const hoTen = $("#txtHoTen").val().trim();
+                const gmail = $("#txtGmail").val().trim();
+                const tienDichVu = parseFloat($("#txtTienDichVu").val());
+                const tienDoDung = parseFloat($("#txtTienDoDung").val());
+
+                const tongTien = tienDichVu + tienDoDung;
+
+                $("#tableDS tbody").append(`
+                    <tr>
+                        <td>${i++}</td>
+                        <td>${maThe}</td>
+                        <td>${hoTen}</td>
+                        <td>${gmail}</td>
+                        <td>${tienDichVu} VNĐ</td>
+                        <td>${tienDoDung} VNĐ</td>
+                        <td>${tongTien} VNĐ</td>
+                    </tr>
+                `);
+                $('#modalID').modal('hide');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <script src="../JS/bootstrap.min.js"></script> 
+    <script src="../JS/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <div class="container border border-3">
+        <header>
+            <img src="../IMG/banner_car.jpg" class="w-100" alt="">
+        </header>
+        <main>
+            <div class="row">
+                <div class="col-3">
+                    <table class="table table-bordered" border='1'>
+                        <tr>
+                            <td style="color: blue;" class="text-center bg-secondary bg-gradient" colspan="2">Bảng tin thị trường</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="text-center bg-secondary bg-gradient fw-bold text-info">Vàng</td>
+                        </tr>
+                        <tr>
+                            <td class="text-info fw-bold">Mua vào</td>
+                            <td class="text-info fw-bold">Bán ra</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="mua-vao-vang-update" class="w-100" type="text" placeholder="">
+                            </td>
+                            <td>
+                                <input id="ban-ra-vang-update" class="w-100" type="text" placeholder="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="text-center bg-secondary text-info fw-bold bg-gradient">USD</td>
+                        </tr>
+                        <tr>
+                            <td class="text-info fw-bold">Mua vào</td>
+                            <td class="text-info fw-bold">Bán ra</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="mua-vao-usd-update" class="w-100" type="text" placeholder="">
+                            </td>
+                            <td>
+                                <input id="ban-ra-usd-update" class="w-100" type="text" placeholder="">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-5">
+                    
+                    <table class="table table-bordered" border='1'>
+                        <tr>
+                            <td style="color: blue;" class="text-center bg-secondary bg-gradient" colspan="2">Cập nhật giá cả thị trường</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left bg-secondary bg-gradient fw-bolder">Mua vào</td>
+                            <td class="bg-secondary bg-gradient">
+                                <input id="mua-vao" type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-left bg-secondary bg-gradient fw-bolder">Bán ra</td>
+                            <td class="bg-secondary bg-gradient">
+                                <input id="ban-ra" type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-left bg-secondary bg-gradient fw-bolder">Loại xe</td>
+                            <td>
+                                <select name="car-type" id="car-type">
+                                    <option value="Toyota">Toyota</option>
+                                    <option value="KIA">KIA</option>
+                                    <option value="Ford">Ford</option>
+                                    <option value="Civic">Civic</option>
+                                    <option value="Ferrari">Ferrari</option>
+                                    <option value="Mercedes">Mercedes</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="fw-bolder">
+                                <input type="radio" name="currency" id="" value="Vàng">Vàng
+                                <input type="radio" name="currency" id="" value="USD">USD
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="button" value="Update"> 
+                                <input type="button" value="State"> 
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-4">
+                    <table class="table table-bordered" border='1'>
+                        <tr>
+                            <td style="color: blue;" class="text-center bg-secondary bg-gradient">Bảng báo giá</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul class="list-unstyled text-info">
+                                    <li>- Với kiểu dáng thể thao, sang trọng</li>
+                                    <li>- Nổi bật, ít tốn nhiên liệu</li>
+                                    <li>- Kiểu dáng thể thao</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <img id="car-image" src="../IMG/car1.jpg" alt="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="text-success fw-bold" >Giá: <span id="price">35000</span> <span id="loai-tien"> USD</span></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </main> 
+    </div>
+
+    <script src="../JS/script.js"></script>
+</body>
+
+</html>
